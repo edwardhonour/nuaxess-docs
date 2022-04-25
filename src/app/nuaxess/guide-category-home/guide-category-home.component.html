@@ -1,0 +1,106 @@
+<fuse-loading-bar></fuse-loading-bar>
+<fuse-vertical-navigation
+    class="dark bg-gray-900 print:hidden"
+    [mode]="isScreenSmall ? 'over' : 'side'"
+    [name]="'mainNavigation'"
+    [navigation]="navigation.default"
+    [opened]="!isScreenSmall">
+<!--        <div class="flex items-center w-full p-4 pl-6">
+            <div class="flex items-center justify-center">
+                <img
+                    class="w-8"
+                    src="assets/images/logo/logo.png">
+            </div>
+            <div class="flex items-center ml-auto">
+                <notifications></notifications>
+                <user [showAvatar]="false"></user>
+            </div>
+        </div>
+    </ng-container> -->
+    
+    <ng-container fuseVerticalNavigationContentFooter>
+        <div class="flex flex-0 items-center justify-center h-16 pr-6 pl-2 mt-2 mb-4 opacity-12">
+            <img
+                class="max-w-36"
+                src="assets/images/logo/logo-text-on-dark.png">
+        </div>
+    </ng-container>
+</fuse-vertical-navigation> 
+
+<!-- Wrapper -->
+<div class="flex flex-col flex-auto w-full min-w-0">
+
+    <!-- Header -->
+    <div class="relative flex flex-0 items-center w-full h-16 px-4 md:px-6 z-49 shadow dark:shadow-none dark:border-b bg-card dark:bg-transparent print:hidden">
+        <!-- Navigation toggle button -->
+        <button
+            mat-icon-button
+            (click)="toggleNavigation('mainNavigation')">
+            <mat-icon [svgIcon]="'heroicons_outline:menu'"></mat-icon>
+        </button>
+        <!-- Components -->
+        <div class="flex items-center pl-2 ml-auto space-x-0.5 sm:space-x-2">
+            <languages></languages>
+            <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
+            <search [appearance]="'bar'"></search>
+            <shortcuts></shortcuts>
+            <messages></messages>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col flex-auto min-w-0">
+
+        <!-- Main -->
+        <div class="flex flex-col items-center p-6 sm:p-10">
+            <div class="flex flex-col w-full max-w-4xl">
+                <div class="-ml-4 sm:mt-8">
+                    <a
+                        mat-button
+                        [routerLink]="['../']"
+                        [color]="'primary'">
+                        <mat-icon [svgIcon]="'heroicons_outline:arrow-narrow-left'"></mat-icon>
+                        <span class="ml-2">Back to Help Center</span>
+                    </a>
+                </div>
+                <div class="mt-2 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight">
+                    {{data.list[0].category_name}}
+                </div>
+                <!-- Guides -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 grid-flow-row gap-y-12 sm:gap-x-4 mt-8 sm:mt-12">
+                    <ng-container *ngFor="let guideCategory of data.list; trackBy: trackByFn">
+                        <div class="flex flex-col items-start">
+                            <a
+                                class="flex items-center mb-1 text-2xl font-semibold"
+                                [routerLink]="[guideCategory.slug]">
+                                {{guideCategory.category_name}}
+                            </a>
+                            <ng-container *ngFor="let guide of guideCategory.guides; trackBy: trackByFn">
+                                <a
+                                    class="mt-3 font-medium hover:underline text-primary-500"
+                                    [routerLink]="[guideCategory.slug, guide.slug]">
+                                    {{guide.guide_name}}
+                                </a>
+                            </ng-container>
+                            <a
+                                class="flex items-center mt-5 pl-4 pr-3 py-0.5 rounded-full cursor-pointer bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
+                                *ngIf="guideCategory.totalGuides > guideCategory.visibleGuides"
+                                [routerLink]="guideCategory.slug">
+                                <span class="text-sm font-medium text-secondary">View All</span>
+                                <mat-icon
+                                    class="ml-2 icon-size-5"
+                                    [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                            </a>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!--<div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+        <span class="font-medium text-secondary">Fuse &copy; {{currentYear}}</span>
+    </div>-->
+
+</div>

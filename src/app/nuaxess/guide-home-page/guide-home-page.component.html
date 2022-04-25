@@ -1,0 +1,155 @@
+<fuse-loading-bar></fuse-loading-bar>
+<fuse-vertical-navigation
+    class="dark bg-gray-900 print:hidden"
+    [mode]="isScreenSmall ? 'over' : 'side'"
+    [name]="'mainNavigation'"
+    [navigation]="navigation.default"
+    [opened]="!isScreenSmall">
+<!--        <div class="flex items-center w-full p-4 pl-6">
+            <div class="flex items-center justify-center">
+                <img
+                    class="w-8"
+                    src="assets/images/logo/logo.png">
+            </div>
+            <div class="flex items-center ml-auto">
+                <notifications></notifications>
+                <user [showAvatar]="false"></user>
+            </div>
+        </div>
+    </ng-container> -->
+    
+    <ng-container fuseVerticalNavigationContentFooter>
+        <div class="flex flex-0 items-center justify-center h-16 pr-6 pl-2 mt-2 mb-4 opacity-12">
+            <img
+                class="max-w-36"
+                src="assets/images/logo/logo-text-on-dark.png">
+        </div>
+    </ng-container>
+</fuse-vertical-navigation> 
+
+<!-- Wrapper -->
+<div class="flex flex-col flex-auto w-full min-w-0">
+
+    <!-- Header -->
+    <div class="relative flex flex-0 items-center w-full h-16 px-4 md:px-6 z-49 shadow dark:shadow-none dark:border-b bg-card dark:bg-transparent print:hidden">
+        <!-- Navigation toggle button -->
+        <button
+            mat-icon-button
+            (click)="toggleNavigation('mainNavigation')">
+            <mat-icon [svgIcon]="'heroicons_outline:menu'"></mat-icon>
+        </button>
+        <!-- Components -->
+        <div class="flex items-center pl-2 ml-auto space-x-0.5 sm:space-x-2">
+            <languages></languages>
+            <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
+            <search [appearance]="'bar'"></search>
+            <shortcuts></shortcuts>
+            <messages></messages>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col flex-auto min-w-0">
+
+        <!-- Header -->
+        <div class="relative pt-8 pb-28 px-4 sm:pt-20 sm:pb-48 sm:px-16 overflow-hidden bg-gray-800 dark:bg-gray-900 dark">
+            <!-- Background - @formatter:off -->
+            <!-- Rings -->
+            <svg class="absolute inset-0 pointer-events-none"
+                 viewBox="0 0 960 540" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+                <g class="text-gray-700 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
+                    <circle r="234" cx="196" cy="23"></circle>
+                    <circle r="234" cx="790" cy="491"></circle>
+                </g>
+            </svg>
+            <!-- @formatter:on -->
+            <div class="z-10 relative flex flex-col items-center">
+                <h2 class="text-xl font-semibold">HELP CENTER</h2>
+                <div class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center">
+                    How can we help you today?
+                </div>
+                <div class="mt-3 sm:text-2xl text-center tracking-tight text-secondary">
+                    Search for a topic or question, check out our FAQs and guides, contact us for detailed support
+                </div>
+            </div>
+        </div>
+    
+        <div class="flex flex-col items-center pb-6 px-6 sm:pb-10 sm:px-10">
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-y-0 md:gap-x-6 w-full max-w-sm md:max-w-4xl -mt-16 sm:-mt-24">
+                <!-- FAQs card -->
+                <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transform transition-shadow ease-in-out duration-150">
+                    <div class="flex flex-col flex-auto items-center p-8 text-center">
+                        <div class="text-2xl font-semibold">FAQs</div>
+                        <div class="md:max-w-40 mt-1 text-secondary">Frequently asked questions and answers</div>
+                    </div>
+                    <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
+                        <a
+                            class="flex items-center"
+                            [routerLink]="['faqs']">
+                            <span class="absolute inset-0"></span>
+                            <span class="font-medium">Go to FAQs</span>
+                            <mat-icon
+                                class="ml-2 icon-size-5 text-current"
+                                [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                        </a>
+                    </div>
+                </div>
+                <!-- Guides card -->
+                <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transform transition-shadow ease-in-out duration-150">
+                    <div class="flex flex-col flex-auto items-center p-8 text-center">
+                        <div class="text-2xl font-semibold">Guides</div>
+                        <div class="md:max-w-40 mt-1 text-secondary">Articles and resources to guide you</div>
+                    </div>
+                    <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
+                        <a
+                            class="flex items-center"
+                            [routerLink]="['guides']">
+                            <span class="absolute inset-0"></span>
+                            <span class="font-medium">Check guides</span>
+                            <mat-icon
+                                class="ml-2 icon-size-5 text-current"
+                                [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                        </a>
+                    </div>
+                </div>
+                <!-- Support card -->
+                <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transform transition-shadow ease-in-out duration-150">
+                    <div class="flex flex-col flex-auto items-center p-8 text-center">
+                        <div class="text-2xl font-semibold">Support</div>
+                        <div class="md:max-w-40 mt-1 text-secondary">Contact us for more detailed support</div>
+                    </div>
+                    <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
+                        <a
+                            class="flex items-center"
+                            [routerLink]="['support']">
+                            <span class="absolute inset-0"></span>
+                            <span class="font-medium">Contact us</span>
+                            <mat-icon
+                                class="ml-2 icon-size-5 text-current"
+                                [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQs -->
+            <div class="mt-24 text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-center">Most frequently asked questions</div>
+            <div class="mt-2 text-xl text-center text-secondary">Here are the most frequently asked questions you may check before getting started</div>
+            <!-- <mat-accordion class="max-w-4xl mt-12">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                            <mat-panel-title>{{faq.question}}</mat-panel-title>
+                        </mat-expansion-panel-header>
+                        {{faq.answer}}
+                    </mat-expansion-panel>
+                </ng-container> 
+            </mat-accordion> -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!--<div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+        <span class="font-medium text-secondary">Fuse &copy; {{currentYear}}</span>
+    </div>-->
+
+</div>

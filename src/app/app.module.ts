@@ -39,22 +39,8 @@ import { UserModule } from 'app/layout/common/user/user.module';
 import { SharedModule } from 'app/shared/shared.module';
 
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { AdminDashboardComponent } from './nuaxess/admin-dashboard/admin-dashboard.component';
 import { VerticalMenuComponent } from './nuaxess/vertical-menu/vertical-menu.component';
 import { TopMenuComponent } from './nuaxess/top-menu/top-menu.component';
-import { AddUserComponent } from './nuaxess/add-user/add-user.component';
-import { UserDashboardComponent } from './nuaxess/user-dashboard/user-dashboard.component';
-import { AddOrgComponent } from './nuaxess/add-org/add-org.component';
-import { UserListComponent } from './nuaxess/user-list/user-list.component';
-import { AddCompanyComponent } from './nuaxess/add-company/add-company.component';
-import { CompanyListComponent } from './nuaxess/company-list/company-list.component';
-import { CompanyDashboardComponent } from './nuaxess/company-dashboard/company-dashboard.component';
-import { QuoteListComponent } from './nuaxess/quote-list/quote-list.component';
-import { QuoteDashboardComponent } from './nuaxess/quote-dashboard/quote-dashboard.component';
-import { AddQuoteComponent } from './nuaxess/add-quote/add-quote.component';
-import { AddQuoteRequestComponent } from './nuaxess/add-quote-request/add-quote-request.component';
-import { QuoteRequestListComponent } from './nuaxess/quote-request-list/quote-request-list.component';
-import { QuoteRequestDashboardComponent } from './nuaxess/quote-request-dashboard/quote-request-dashboard.component'
 
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -62,45 +48,41 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatSelectModule } from '@angular/material/select';
 import { FuseHighlightModule } from '@fuse/components/highlight';
 import { FormsFieldsComponent } from 'app/modules/admin/ui/forms/fields/fields.component';
-import { EditUserComponent } from './nuaxess/edit-user/edit-user.component';
-import { EditCompanyComponent } from './nuaxess/edit-company/edit-company.component';
-import { EditQuoteComponent } from './nuaxess/edit-quote/edit-quote.component';
-import { UserEnrollComponent } from './nuaxess/user-enroll/user-enroll.component';
-import { BadminComponent } from './nuaxess/badmin/badmin.component';
-import { EmployeeDashboardComponent } from './nuaxess/employee-dashboard/employee-dashboard.component';
 import { FuseCardComponent, FuseCardModule } from '@fuse/components/card';
-import { InvalidTokenComponent } from './nuaxess/invalid-token/invalid-token.component';
+//import { InvalidTokenComponent } from './nuaxess/invalid-token/invalid-token.component';
 import { AddBrokerComponent } from './nuaxess/add-broker/add-broker.component';
 import { EditBrokerComponent } from './nuaxess/edit-broker/edit-broker.component';
 import { ForcedLogoutComponent } from './nuaxess/forced-logout/forced-logout.component';
 import { NewSigninComponent } from './nuaxess/new-signin/new-signin.component';
-import { MemberLookupComponent } from './nuaxess/member-lookup/member-lookup.component';
-import { EmployeeLookupComponent } from './nuaxess/employee-lookup/employee-lookup.component';
-import { InvoiceDashboardComponent } from './nuaxess/invoice-dashboard/invoice-dashboard.component';
+//import { MemberLookupComponent } from './nuaxess/member-lookup/member-lookup.component';
+//import { EmployeeLookupComponent } from './nuaxess/employee-lookup/employee-lookup.component';
+//import { InvoiceDashboardComponent } from './nuaxess/invoice-dashboard/invoice-dashboard.component';
 import { InvoiceListComponent } from './nuaxess/invoice-list/invoice-list.component';
-import { CensusHistoryComponent } from './nuaxess/census-history/census-history.component';
-import { BrokerHomeComponent } from './nuaxess/broker-home/broker-home.component';
-import { CurrentCensusComponent } from './nuaxess/current-census/current-census.component';
-import { CurrentTerminationsComponent } from './nuaxess/current-terminations/current-terminations.component';
-import { CurrentAdditionsComponent } from './nuaxess/current-additions/current-additions.component';
+//import { CensusHistoryComponent } from './nuaxess/census-history/census-history.component';
+//import { BrokerHomeComponent } from './nuaxess/broker-home/broker-home.component';
+//import { CurrentCensusComponent } from './nuaxess/current-census/current-census.component';
+//import { CurrentTerminationsComponent } from './nuaxess/current-terminations/current-terminations.component';
+//import { CurrentAdditionsComponent } from './nuaxess/current-additions/current-additions.component';
 import { UserProfileComponent } from './nuaxess/user-profile/user-profile.component';
 import { UserSettingsComponent } from './nuaxess/user-settings/user-settings.component';
 import { UserLogoutComponent } from './nuaxess/user-logout/user-logout.component';
-import { CommissionListComponent } from './nuaxess/commission-list/commission-list.component';
-import { CommissionDashboardComponent } from './nuaxess/commission-dashboard/commission-dashboard.component';
-import { BrokerListComponent } from './nuaxess/broker-list/broker-list.component';
-import { ProspectListComponent } from './nuaxess/prospect-list/prospect-list.component';
-import { ProspectDashboardComponent } from './nuaxess/prospect-dashboard/prospect-dashboard.component';
-import { OrgProfileComponent } from './nuaxess/org-profile/org-profile.component';
-import { PlanListComponent } from './nuaxess/plan-list/plan-list.component';
-import { AdditionlistComponent } from './nuaxess/additionlist/additionlist.component';
-import { AdditionListComponent } from './nuaxess/addition-list/addition-list.component';
-import { TerminationListComponent } from './nuaxess/termination-list/termination-list.component';
-import { MemberListComponent } from './nuaxess/member-list/member-list.component';
-import { ProjectListComponent } from './cmod/project-list/project-list.component';
-import { ProjectDashboardComponent } from './cmod/project-dashboard/project-dashboard.component';
-import { FacilityListComponent } from './cmod/facility-list/facility-list.component';
-import { FacilityDashboardComponent } from './cmod/facility-dashboard/facility-dashboard.component';
+import { GuideHomePageComponent } from './nuaxess/guide-home-page/guide-home-page.component';
+import { GuideCategoryHomeComponent } from './nuaxess/guide-category-home/guide-category-home.component';
+import { GuidePageComponent } from './nuaxess/guide-page/guide-page.component';
+//import { CommissionListComponent } from './nuaxess/commission-list/commission-list.component';
+//import { CommissionDashboardComponent } from './nuaxess/commission-dashboard/commission-dashboard.component';
+//import { ProspectListComponent } from './nuaxess/prospect-list/prospect-list.component';
+//import { ProspectDashboardComponent } from './nuaxess/prospect-dashboard/prospect-dashboard.component';
+//import { OrgProfileComponent } from './nuaxess/org-profile/org-profile.component';
+//import { PlanListComponent } from './nuaxess/plan-list/plan-list.component';
+//import { AdditionlistComponent } from './nuaxess/additionlist/additionlist.component';
+//import { AdditionListComponent } from './nuaxess/addition-list/addition-list.component';
+//import { TerminationListComponent } from './nuaxess/termination-list/termination-list.component';
+//import { MemberListComponent } from './nuaxess/member-list/member-list.component';
+//import { ProjectListComponent } from './cmod/project-list/project-list.component';
+//import { ProjectDashboardComponent } from './cmod/project-dashboard/project-dashboard.component';
+//import { FacilityListComponent } from './cmod/facility-list/facility-list.component';
+//import { FacilityDashboardComponent } from './cmod/facility-dashboard/facility-dashboard.component';
 
 const routerConfig: ExtraOptions = {
     preloadingStrategy       : PreloadAllModules,
@@ -110,60 +92,61 @@ const routerConfig: ExtraOptions = {
 @NgModule({
     declarations: [
         AppComponent,
-        AdminDashboardComponent,
+   //     AdminDashboardComponent,
         VerticalMenuComponent,
         TopMenuComponent,
-        AddUserComponent,
-        UserDashboardComponent,
-        AddOrgComponent,
-        UserListComponent,
-        AddCompanyComponent,
-        CompanyListComponent,
-        CompanyDashboardComponent,
-        QuoteListComponent,
-        QuoteDashboardComponent,
-        AddQuoteComponent,
-        AddQuoteRequestComponent,
-        QuoteRequestListComponent,
-        QuoteRequestDashboardComponent,
-        EditUserComponent,
-        EditCompanyComponent,
-        EditQuoteComponent,
-        UserEnrollComponent,
-        BadminComponent,
-        EmployeeDashboardComponent,
-        InvalidTokenComponent,
+  //      UserDashboardComponent,
+  //      AddOrgComponent,
+  //      UserListComponent,
+  //      AddCompanyComponent,
+  //      CompanyListComponent,
+  //      CompanyDashboardComponent,
+  //      QuoteListComponent,
+  //      QuoteDashboardComponent,
+  //      AddQuoteComponent,
+  //      AddQuoteRequestComponent,
+  //      QuoteRequestListComponent,
+  //      QuoteRequestDashboardComponent,
+  //      EditUserComponent,
+  //      EditCompanyComponent,
+  //      EditQuoteComponent,
+  //      UserEnrollComponent,
+  //      BadminComponent,
+  //      EmployeeDashboardComponent,
+  //      InvalidTokenComponent,
         AddBrokerComponent,
         EditBrokerComponent,
         ForcedLogoutComponent,
         NewSigninComponent,
-        MemberLookupComponent,
-        EmployeeLookupComponent,
-        InvoiceDashboardComponent,
+  //      MemberLookupComponent,
+  //      EmployeeLookupComponent,
+  //      InvoiceDashboardComponent,
         InvoiceListComponent,
-        CensusHistoryComponent,
-        BrokerHomeComponent,
-        CurrentCensusComponent,
-        CurrentTerminationsComponent,
-        CurrentAdditionsComponent,
+  //      CensusHistoryComponent,
+  //      BrokerHomeComponent,
+  //      CurrentCensusComponent,
+  //      CurrentTerminationsComponent,
+  //      CurrentAdditionsComponent,
         UserProfileComponent,
         UserSettingsComponent,
         UserLogoutComponent,
-        CommissionListComponent,
-        CommissionDashboardComponent,
-        BrokerListComponent,
-        ProspectListComponent,
-        ProspectDashboardComponent,
-        OrgProfileComponent,
-        PlanListComponent,
-        AdditionlistComponent,
-        AdditionListComponent,
-        TerminationListComponent,
-        MemberListComponent,
-        ProjectListComponent,
-        ProjectDashboardComponent,
-        FacilityListComponent,
-        FacilityDashboardComponent
+        GuideHomePageComponent,
+        GuideCategoryHomeComponent,
+        GuidePageComponent
+  //      CommissionListComponent,
+  //      CommissionDashboardComponent,
+  //      ProspectListComponent,
+  //      ProspectDashboardComponent,
+  //      OrgProfileComponent,
+  //      PlanListComponent,
+  //      AdditionlistComponent,
+  //      AdditionListComponent,
+  //      TerminationListComponent,
+   //     MemberListComponent,
+   //     ProjectListComponent,
+    //    ProjectDashboardComponent,
+   //     FacilityListComponent,
+   //     FacilityDashboardComponent
     ],
     imports     : [
         BrowserModule,

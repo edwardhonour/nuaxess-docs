@@ -1,0 +1,110 @@
+<fuse-loading-bar></fuse-loading-bar>
+<fuse-vertical-navigation
+    class="dark bg-gray-900 print:hidden"
+    [mode]="isScreenSmall ? 'over' : 'side'"
+    [name]="'mainNavigation'"
+    [navigation]="navigation.default"
+    [opened]="!isScreenSmall">
+<!--        <div class="flex items-center w-full p-4 pl-6">
+            <div class="flex items-center justify-center">
+                <img
+                    class="w-8"
+                    src="assets/images/logo/logo.png">
+            </div>
+            <div class="flex items-center ml-auto">
+                <notifications></notifications>
+                <user [showAvatar]="false"></user>
+            </div>
+        </div>
+    </ng-container> -->
+    
+    <ng-container fuseVerticalNavigationContentFooter>
+        <div class="flex flex-0 items-center justify-center h-16 pr-6 pl-2 mt-2 mb-4 opacity-12">
+            <img
+                class="max-w-36"
+                src="assets/images/logo/logo-text-on-dark.png">
+        </div>
+    </ng-container>
+</fuse-vertical-navigation> 
+
+<!-- Wrapper -->
+<div class="flex flex-col flex-auto w-full min-w-0">
+
+    <!-- Header -->
+    <div class="relative flex flex-0 items-center w-full h-16 px-4 md:px-6 z-49 shadow dark:shadow-none dark:border-b bg-card dark:bg-transparent print:hidden">
+        <!-- Navigation toggle button -->
+        <button
+            mat-icon-button
+            (click)="toggleNavigation('mainNavigation')">
+            <mat-icon [svgIcon]="'heroicons_outline:menu'"></mat-icon>
+        </button>
+        <!-- Components -->
+        <div class="flex items-center pl-2 ml-auto space-x-0.5 sm:space-x-2">
+            <languages></languages>
+            <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
+            <search [appearance]="'bar'"></search>
+            <shortcuts></shortcuts>
+            <messages></messages>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex flex-col flex-auto min-w-0">
+
+        <!-- Main -->
+        <div class="flex flex-col items-center p-6 sm:p-10">
+            <div class="flex flex-col w-full max-w-4xl">
+                <div class="-ml-4 sm:mt-8">
+                    <a
+                        mat-button
+                        [routerLink]="['../']"
+                        [color]="'primary'">
+                        <mat-icon [svgIcon]="'heroicons_outline:arrow-narrow-left'"></mat-icon>
+                        <span class="ml-2">Back to {{ data.guideCategory.title }}</span>
+                    </a>
+                </div>
+                <div class="mt-2 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight">{{data.guideCategory.guides[0].title}}</div>
+                <div class="mt-1 sm:text-2xl tracking-tight text-secondary">{{ data.guideCategory.guides[0].subtitle}}</div>
+    
+                <!-- Guide -->
+                <div
+                    class="mt-8 sm:mt-12 max-w-none prose prose-sm"
+                    [innerHTML]="data.guideCategory.guides[0].content"></div>
+    
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-10 pt-8 border-t">
+                    <div class="text-sm font-medium text-secondary">Last updated 2 months ago</div>
+                    <div class="flex items-center mt-2 sm:mt-0">
+                        <div class="font-medium text-secondary">Was this page helpful?</div>
+                        <div class="ml-4">
+                            <button mat-icon-button>
+                                <mat-icon [svgIcon]="'heroicons_outline:thumb-up'"></mat-icon>
+                            </button>
+                            <button mat-icon-button>
+                                <mat-icon [svgIcon]="'heroicons_outline:thumb-down'"></mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Next -->
+                <a
+                    class="mt-8 flex items-center justify-between p-6 sm:px-10 rounded-2xl shadow hover:shadow-lg bg-card transform transition-shadow ease-in-out duration-150"
+                    [routerLink]="'.'">
+                    <div>
+                        <div class="text-secondary">Next</div>
+                        <div class="text-lg font-semibold">Removing a media from a project</div>
+                    </div>
+                    <mat-icon
+                        class="ml-3"
+                        [svgIcon]="'heroicons_outline:arrow-right'"></mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!--<div class="relative flex flex-0 items-center justify-start w-full h-14 px-4 md:px-6 z-49 border-t bg-card dark:bg-transparent print:hidden">
+        <span class="font-medium text-secondary">Fuse &copy; {{currentYear}}</span>
+    </div>-->
+
+</div>
