@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InvoiceListComponent } from './invoice-list.component';
+import { EditGuidePageComponent } from './edit-guide-page.component';
 
-describe('InvoiceListComponent', () => {
-  let component: InvoiceListComponent;
-  let fixture: ComponentFixture<InvoiceListComponent>;
+describe('EditGuidePageComponent', () => {
+  let component: EditGuidePageComponent;
+  let fixture: ComponentFixture<EditGuidePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InvoiceListComponent ]
+      declarations: [ EditGuidePageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InvoiceListComponent);
+    fixture = TestBed.createComponent(EditGuidePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

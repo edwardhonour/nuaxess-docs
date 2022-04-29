@@ -10,11 +10,11 @@ import { DataService } from 'app/data.service';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-invoice-list',
-  templateUrl: './invoice-list.component.html',
-  styleUrls: ['./invoice-list.component.scss']
+  selector: 'app-category-list',
+  templateUrl: './category-list.component.html',
+  styleUrls: ['./category-list.component.scss']
 })
-export class InvoiceListComponent implements OnInit, OnDestroy {
+export class CategoryListComponent implements OnInit, OnDestroy {
   navigation: Navigation;
   isScreenSmall: boolean;
   term: any;
@@ -45,36 +45,24 @@ export class InvoiceListComponent implements OnInit, OnDestroy {
     ngOnInit(): void
     {      
 
-            this._activatedRoute.data.subscribe(({ 
-              data, menudata, userdata })=> { 
-                this.data=data;
-                if (this.data.user.force_logout>0) {
-                  localStorage.removeItem('uid');
-                  this._router.navigate(['/forced-off',this.data.user.force_logout]);
-              }
-                this.user=userdata;
-                this.navigation=menudata
-                console.log(data)
-            }) 
-            
-//            this._dataService.getVerticalMenu()
-//            .pipe(takeUntil(this._unsubscribeAll))
-//            .subscribe((data: Navigation)=> {             
-//                    this.navigation=data
-//            })  
-    
-//            this._dataService.getUser()
-//            .pipe(takeUntil(this._unsubscribeAll))
-//            .subscribe((user: any)=> {             
-//                    this.user=user
-//            })  
-          
-//            this._fuseMediaWatcherService.onMediaChange$
-//            .pipe(takeUntil(this._unsubscribeAll))
-//            .subscribe(({matchingAliases}) => {
-//                // Check if the screen is small
-//                this.isScreenSmall = !matchingAliases.includes('md');
-//            });
+      this._activatedRoute.data.subscribe(({ 
+        data, menudata, userdata })=> { 
+          this.data=data;
+          if (this.data.user.force_logout>0) {
+            localStorage.removeItem('uid');
+            this._router.navigate(['/forced-off',this.data.user.force_logout]);
+        }
+          this.user=userdata;
+          this.navigation=menudata
+          console.log(data)
+      }) 
+                      
+            this._fuseMediaWatcherService.onMediaChange$
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(({matchingAliases}) => {
+                // Check if the screen is small
+                this.isScreenSmall = !matchingAliases.includes('md');
+            });
               
     }
 
@@ -133,11 +121,7 @@ export class InvoiceListComponent implements OnInit, OnDestroy {
         return this.formFieldHelpers.join(' ');
     }
 
-    showInvoice(id: any, month_id: any) {
-      window.open(
-        "https://myna-api.com/api/pdf1.php?id="+id+"&display=B"+"&month_id="+this.data.month_id, "_blank");
-    }
-
+  
     postForm() {
         this._dataService.postForm("post-add-org", this.data).subscribe((data:any)=>{
           if (data.error_code=="0") {
